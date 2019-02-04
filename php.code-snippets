@@ -1,0 +1,239 @@
+{
+    "var dump": {
+        "scope": "html",
+        "prefix": "var_dump",
+        "body": [
+            "<?php var_dump($$var); ?>",
+        ],
+        "description": "<?php var_dump($var); ?>"
+    },
+    "var dump in php": {
+        "prefix": "var_dump",
+        "scope": "php",
+        "body": [
+            "var_dump($$var);",
+        ],
+        "description": "var_dump($var);"
+    },
+    "echo": {
+        "scope": "html",
+        "prefix": "echo",
+        "body": [
+            "<?php echo $$var; ?>",
+        ],
+        "description": "Echo"
+    },
+    "html if": {
+        "prefix": "if",
+        "scope": "html",
+        "body": [
+            "<?php if( $$var === '$2' ): ?>",
+            "\t$3",
+            "<?php endif; ?>"
+        ],
+        "description": "IF"
+    },
+    "sqoute": {
+        "scope": "php",
+        "prefix": "sqoute",
+        "body": [
+            " ' . $1 . ' ",
+        ],
+        "description": "Log output to console"
+    },
+    "die": {
+        "scope": "php",
+        "prefix": "die",
+        "body": [
+            "die($0);",
+        ],
+        "description": "Die Something"
+    },
+    "echopre": {
+        "scope": "php",
+        "prefix": "echopre",
+        "body": [
+            "echo '<pre>';$0",
+        ],
+        "description": "Die Something"
+    },
+    "echo something": {
+        "scope": "php",
+        "prefix": "echopre",
+        "body": [
+            "echo '$1';",
+        ],
+        "description": "Die Something"
+    },
+    "function": {
+        "scope": "php",
+        "prefix": "function",
+        "body": [
+            "function $1( $2 ) {$3}",
+        ],
+        "description": "Log output to console"
+    },
+    "emp": {
+        "scope": "php",
+        "prefix": "empty",
+        "body": [
+            "empty( $1 );",
+        ],
+        "description": "Log output to console"
+    },
+    "iss": {
+        "scope": "php",
+        "prefix": "isset",
+        "body": [
+            "isset( $1 );",
+        ],
+        "description": "Log output to console"
+    },
+    "php": {
+        "scope": "html",
+        "prefix": "php",
+        "body": [
+            "<?php $1 ?>",
+        ],
+        "description": "Log output to console"
+    },
+    "class": {
+        "scope": "php",
+        "prefix": "class",
+        "body": [
+            "/**",
+            "* ClassName.",
+            "*",
+            "* @author     author",
+            "* @package     package",
+            "* @since     1.0.0",
+            "*/",
+            "class ClassName extends AnotherClass {",
+            "",
+            "\t/**",
+            "\t* Instance of this class.",
+            "\t*",
+            "\t* @since     1.0.0",
+            "\t* @access     private",
+            "\t* @var     ClassName",
+            "\t*/",
+            "\tprivate static $$instance;",
+            "",
+            "\t/**",
+            "\t* Define the core functionality of $0",
+            "\t*",
+            "\t* Load the dependencies.",
+            "\t*",
+            "\t* @since     1.0.0",
+            "\t*/",
+            "\tfunction __construct() {",
+            "\t\t# code...$1",
+            "\t}",
+            "} //Class\n",
+        ],
+        "description": "Log output to console"
+    },
+    "php_via_description": {
+        "prefix": "php",
+        "body": [
+            "<?php",
+            "/**",
+            "* Description",
+            "*",
+            "* @author     author",
+            "* @since     1.0.0",
+            "*/",
+            "$0",
+            "?>"
+        ],
+        "description": "PHP via description"
+    },
+    "abspath": {
+        "prefix": "abspath",
+        "body": [
+            "// don't load directly.",
+            "if ( ! defined( 'ABSPATH' ) ) {",
+            "\theader('Status: 403 Forbidden');",
+            "\theader('HTTP/1.1 403 Forbidden');",
+            "\texit;",
+            "}",
+        ],
+        "description": "ABSPATH Forbidden"
+    },
+    "publicfunction": {
+        "prefix": "public function",
+        "body": [
+            " /**",
+            " * Description",
+            " *",
+            " * @since     1.0.0",
+            " */",
+            "public function $functionName () {",
+            "\t# code...$2",
+            "}",
+            "",
+        ],
+        "description": "Public function"
+    },
+    "privatefunction": {
+        "prefix": "private function",
+        "body": [
+            " /**",
+            " * Description",
+            " *",
+            " * @since     1.0.0",
+            " */",
+            "private function $functionName () {",
+            "\t# code...$2",
+            "}",
+            "",
+        ],
+        "description": "Private function"
+    },
+    "ifclass": {
+        "prefix": "ifClass",
+        "body": [
+            "if ( ! class_exists( 'ClassName' ) ) :",
+            "\t/**",
+            "\t* ClassName.",
+            "\t*",
+            "\t* @author     author",
+            "\t* @package     package",
+            "\t* @since     1.0.0",
+            "\t*/",
+            "\tclass ClassName extends AnotherClass {",
+            "",
+            "\t\t/**",
+            "\t\t* Instance of this class.",
+            "\t\t*",
+            "\t\t* @since     1.0.0",
+            "\t\t* @access     private",
+            "\t\t* @var     ClassName",
+            "\t\t*/",
+            "\t\tprivate static $$instance;",
+            "",
+            "\t\t/**",
+            "\t\t* Define the core functionality of the ClassName.",
+            "\t\t*",
+            "\t\t* Load the dependencies.",
+            "\t\t*",
+            "\t\t* @since     1.0.0",
+            "\t\t*/",
+            "\t\tfunction __construct() {",
+            "\t\t\t# code...$0",
+            "\t\t}",
+            "\t} //Class\n",
+            "endif;"
+        ],
+        "description": "ABSPATH Forbidden"
+    },
+
+    "bqute": {
+        "scope": "php",
+        "prefix": "bqute",
+        "body": [
+            "/**$1 $1@author $2$3@version$4 $2*/",
+        ],
+        "description": "Log output to console"
+    }
+}
